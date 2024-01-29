@@ -1,0 +1,57 @@
+@import './clear.scss';
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 100%;
+  width: 1280px;
+  padding: 0px 40px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+
+  & > section,
+  & > hr {
+    margin-bottom: 40px;
+  }
+}
+
+h1 {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.type-of-bm {
+  &__item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 20px;
+    label {
+      cursor: pointer;
+    }
+  }
+}
+
+.result-days {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #222222;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-item {
+  display: flex;
+  flex-direction: column;
+}
