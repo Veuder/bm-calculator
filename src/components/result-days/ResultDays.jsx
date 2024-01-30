@@ -1,4 +1,4 @@
-const ResultDays = ({ data, bm }) => {
+const ResultDays = ({ data, bm, isPromotion }) => {
   const calculateDays = () => {
     let resultHours = 0
     data.forEach((element) => {
@@ -6,7 +6,7 @@ const ResultDays = ({ data, bm }) => {
         resultHours += +element[bm]
       }
     })
-    return Math.ceil(resultHours / 8)
+    return isPromotion ? 0 : Math.ceil(resultHours / 8)
   }
   return <h2 className="result-days">Итого дней: {calculateDays()}</h2>
 }

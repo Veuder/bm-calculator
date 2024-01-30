@@ -1,10 +1,20 @@
-const ResultHours = ({ data, bm }) => {
+const ResultHours = ({ data, bm, month, isPromotion }) => {
+  let hoursCount = 0
   return (
     <section>
       <ul className="result-hours">
-        {data.map((member) => (
-          <li key={member.id}>{member.name + ': ' + member[bm] + ' часов'}</li>
-        ))}
+        {data.map((member) => {
+          return (
+            <li key={member.id}>
+              {member.name + ': '}
+              {isPromotion ? (
+                <span>{member[bm] * month + ' часов'}</span>
+              ) : (
+                <span>{member[bm] + ' часов'}</span>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

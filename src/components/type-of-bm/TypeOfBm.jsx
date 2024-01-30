@@ -43,6 +43,18 @@ const TypeOfBm = ({ bm, setBm }) => {
             Бренд-медиа без ведения
           </label>
         </div>
+
+        <div className="type-of-bm__item">
+          <input
+            type="radio"
+            id="promotionHours"
+            name="type"
+            value="promotionHours"
+            checked={bm === 'promotionHours'}
+            onChange={onOptionChange}
+          />
+          <label htmlFor="promotionHours">Сопровождение</label>
+        </div>
       </fieldset>
     </section>
   )
