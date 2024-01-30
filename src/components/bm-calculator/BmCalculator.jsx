@@ -10,7 +10,6 @@ const BmCalculator = () => {
   const [bm, setBm] = useState('bmHours')
   const [month, setMonth] = useState(9)
   const isPromotion = bm === 'promotionHours'
-  console.log(isPromotion)
   return (
     <>
       <TypeOfBm setBm={setBm} bm={bm} />
