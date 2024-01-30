@@ -1,5 +1,4 @@
 const ResultHours = ({ data, bm, month, isPromotion }) => {
-  let hoursCount = 0
   return (
     <section>
       <ul className="result-hours">
