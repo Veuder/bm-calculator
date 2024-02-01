@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const AdditionalItem = ({ text, valuePercent, valueHours, data, setData }) => {
   const [checked, setChecked] = useState(false)
+  useEffect(() => {
+    setChecked(false)
+  }, [])
   function handleChange(event) {
     let isChecked = event.target.checked
     setChecked(isChecked)

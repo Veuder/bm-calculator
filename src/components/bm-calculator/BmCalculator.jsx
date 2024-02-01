@@ -1,6 +1,6 @@
 import TeamList from '../team-list/TeamList'
 import { hours } from '../../data'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ResultHours from '../result-hours/ResultHours'
 import TypeOfBm from '../type-of-bm/TypeOfBm'
 import ResultDays from '../result-days/ResultDays'
@@ -10,8 +10,23 @@ const BmCalculator = () => {
   const [data, setData] = useState(JSON.parse(JSON.stringify(hours)))
   const [bm, setBm] = useState('bmHours')
   const [month, setMonth] = useState(9)
+  const [isLoading, setIsLoading] = useState(false)
   const isPromotion = bm === 'promotionHours'
-  const isAdditional = bm === 'bmHours' || bm === 'bmWithoutPromotionHours'
+  let isAdditional = bm === 'bmHours' || bm === 'bmWithoutPromotionHours'
+
+  useEffect(() => {
+    setIsLoading(false)
+    setTimeout(() => {
+      setIsLoading(true)
+    }, 1)
+  }, [bm])
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(true)
+  //     console.log('done')
+  //   }, 10)
+  // }, [bm])
 
   return (
     <>
@@ -19,7 +34,13 @@ const BmCalculator = () => {
       <TeamList setData={setData} data={data} bm={bm} />
       {isPromotion && <MonthField month={month} setMonth={setMonth} />}
       <hr />
-      {isAdditional && <Additional setData={setData} data={data} bm={bm} />}
+      {isLoading && isAdditional && (
+        <Additional setData={setData} data={data} bm={bm} />
+      )}
+      {/* {isBmWithoutPromotionHours && (
+        <Additional setData={setData} data={data} bm={bm} />
+      )} */}
+
       {isAdditional && <hr />}
       <ResultHours
         data={data}
