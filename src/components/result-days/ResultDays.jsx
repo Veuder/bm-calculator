@@ -3,7 +3,10 @@ const ResultDays = ({ data, bm, isPromotion }) => {
     let resultHours = 0
     data.forEach((element) => {
       if (element.separate === true) {
-        resultHours += +element[bm]
+        resultHours +=
+          +element[bm] +
+          (+element[bm] * element['additionalPercent']) / 100 +
+          element['additionalHours']
       }
     })
     return isPromotion ? 0 : Math.ceil(resultHours / 8)

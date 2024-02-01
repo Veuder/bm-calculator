@@ -1,4 +1,4 @@
-const ResultHours = ({ data, bm, month, isPromotion }) => {
+const ResultHours = ({ data, bm, month, isPromotion, isAdditional }) => {
   return (
     <section>
       <ul className="result-hours">
@@ -8,6 +8,18 @@ const ResultHours = ({ data, bm, month, isPromotion }) => {
               {member.name + ': '}
               {isPromotion ? (
                 <span>{member[bm] * month + ' часов'}</span>
+              ) : isAdditional ? (
+                <span>
+                  {member[bm] +
+                    ' + ' +
+                    (member['additionalHours'] +
+                      (member[bm] * member['additionalPercent']) / 100) +
+                    ' = ' +
+                    (+member[bm] +
+                      +member['additionalHours'] +
+                      (member[bm] * member['additionalPercent']) / 100) +
+                    ' часов'}
+                </span>
               ) : (
                 <span>{member[bm] + ' часов'}</span>
               )}

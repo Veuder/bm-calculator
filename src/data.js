@@ -6,6 +6,8 @@ export const hours = [
     bmModuleHours: 18,
     bmWithoutPromotionHours: 22,
     promotionHours: 4,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'illustratorSenior',
@@ -14,6 +16,8 @@ export const hours = [
     bmModuleHours: 160,
     bmWithoutPromotionHours: 160,
     promotionHours: 160,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'illustratorRuk',
@@ -22,6 +26,8 @@ export const hours = [
     bmModuleHours: 30,
     bmWithoutPromotionHours: 30,
     promotionHours: 0,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'mainDiz',
@@ -30,6 +36,8 @@ export const hours = [
     bmModuleHours: 55,
     bmWithoutPromotionHours: 60,
     promotionHours: 20,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'midleDiz',
@@ -38,6 +46,8 @@ export const hours = [
     bmModuleHours: 30,
     bmWithoutPromotionHours: 40,
     promotionHours: 60,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'mainWebDiz',
@@ -47,6 +57,8 @@ export const hours = [
     bmWithoutPromotionHours: 160,
     promotionHours: 0,
     separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'midleWebDiz',
@@ -55,7 +67,18 @@ export const hours = [
     bmModuleHours: 0,
     bmWithoutPromotionHours: 80,
     promotionHours: 30,
-    separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
+  },
+  {
+    id: 'leadDev',
+    name: 'Лид разработки',
+    bmHours: 0,
+    bmModuleHours: 0,
+    bmWithoutPromotionHours: 0,
+    promotionHours: 0,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'frontendDev',
@@ -65,6 +88,8 @@ export const hours = [
     bmWithoutPromotionHours: 100,
     promotionHours: 10,
     separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'manager',
@@ -73,7 +98,8 @@ export const hours = [
     bmModuleHours: 20,
     bmWithoutPromotionHours: 100,
     promotionHours: 5,
-    separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
     id: 'qa',
@@ -82,15 +108,17 @@ export const hours = [
     bmModuleHours: 40,
     bmWithoutPromotionHours: 100,
     promotionHours: 10,
-    separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
   {
-    id: 'Content',
+    id: 'content',
     name: 'Контент',
     bmHours: 80,
     bmModuleHours: 50,
     bmWithoutPromotionHours: 80,
     promotionHours: 40,
-    separate: true,
+    additionalPercent: 0,
+    additionalHours: 0,
   },
 ]

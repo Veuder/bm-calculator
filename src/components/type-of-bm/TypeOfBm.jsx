@@ -1,6 +1,7 @@
-const TypeOfBm = ({ bm, setBm }) => {
+const TypeOfBm = ({ bm, setBm, setData, hours }) => {
   const onOptionChange = (e) => {
     setBm(e.target.value)
+    setData(JSON.parse(JSON.stringify(hours)))
   }
   return (
     <section className="type-of-bm">
