@@ -1,13 +1,33 @@
 import { useEffect, useState } from 'react'
 
-const AdditionalItem = ({ text, valuePercent, valueHours, data, setData }) => {
+const AdditionalItem = ({
+  id,
+  text,
+  valuePercent,
+  valueHours,
+  data,
+  setData,
+  handleConnectedChange,
+  isLms,
+}) => {
   const [checked, setChecked] = useState(false)
   useEffect(() => {
-    setChecked(false)
-  }, [])
-  function handleChange(event) {
-    let isChecked = event.target.checked
+    if (id === 'lk-user' && isLms && checked) {
+      setChecked(false)
+      handleChange(false)
+    }
+  }, [isLms])
+  // if (isLms) {
+  //   console.log(isLms)
+  //   console.log('user disable')
+  //   setChecked(false)
+  // }
+  function handleChange(isChecked) {
     setChecked(isChecked)
+    if (id === 'lms') {
+      handleConnectedChange()
+    }
+
     for (let key in valuePercent) {
       addAdditional(key, valuePercent[key], 'additionalPercent', isChecked)
     }
@@ -32,8 +52,13 @@ const AdditionalItem = ({ text, valuePercent, valueHours, data, setData }) => {
   }
 
   return (
-    <div className="pretty p-switch p-fill">
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+    <div className="pretty p-switch p-fill" id={id}>
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => handleChange(e.target.checked)}
+        disabled={isLms ? true : false}
+      />
       <div className="state">
         <label>{text}</label>
       </div>

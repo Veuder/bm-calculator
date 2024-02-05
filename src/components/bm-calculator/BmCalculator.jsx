@@ -21,13 +21,6 @@ const BmCalculator = () => {
     }, 1)
   }, [bm])
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoading(true)
-  //     console.log('done')
-  //   }, 10)
-  // }, [bm])
-
   return (
     <>
       <TypeOfBm setBm={setBm} bm={bm} setData={setData} hours={hours} />
@@ -37,9 +30,6 @@ const BmCalculator = () => {
       {isLoading && isAdditional && (
         <Additional setData={setData} data={data} bm={bm} />
       )}
-      {/* {isBmWithoutPromotionHours && (
-        <Additional setData={setData} data={data} bm={bm} />
-      )} */}
 
       {isAdditional && <hr />}
       <ResultHours

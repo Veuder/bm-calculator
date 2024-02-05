@@ -1,11 +1,23 @@
+import { useState } from 'react'
 import AdditionalItem from '../additional-item/AdditionalItem'
 
 const Additional = ({ data, setData, bm }) => {
+  const [isLms, setIsLms] = useState(false)
+
+  function handleConnectedChange() {
+    if (document.querySelector('#lms input').checked) {
+      setIsLms(true)
+    } else {
+      setIsLms(false)
+    }
+  }
+
   return (
     <section className="additional">
       <h2>Дополнительно</h2>
       <div className="additional__list">
         <AdditionalItem
+          id={'lk-user'}
           text={'ЛК пользователя (классика)'}
           valuePercent={{
             frontendDev: 20,
@@ -15,8 +27,12 @@ const Additional = ({ data, setData, bm }) => {
           setData={setData}
           data={data}
           bm={bm}
+          handleConnectedChange={handleConnectedChange}
+          isLms={isLms}
         />
+
         <AdditionalItem
+          id={'calculator'}
           text={'Калькулятор (простой)'}
           valuePercent={{
             frontendDev: 10,
@@ -29,6 +45,7 @@ const Additional = ({ data, setData, bm }) => {
           bm={bm}
         />
         <AdditionalItem
+          id={'quiz'}
           text={'Квиз/тесты (простые)'}
           valuePercent={{
             frontendDev: 10,
@@ -41,6 +58,7 @@ const Additional = ({ data, setData, bm }) => {
           bm={bm}
         />
         <AdditionalItem
+          id={'hard-menu'}
           text={'Сложное меню и категории'}
           valuePercent={{
             frontendDev: 10,
@@ -53,6 +71,7 @@ const Additional = ({ data, setData, bm }) => {
           bm={bm}
         />
         <AdditionalItem
+          id={'lms'}
           text={'LMS (классика)'}
           valuePercent={{
             frontendDev: 40,
@@ -66,8 +85,10 @@ const Additional = ({ data, setData, bm }) => {
           setData={setData}
           data={data}
           bm={bm}
+          handleConnectedChange={handleConnectedChange}
         />
         <AdditionalItem
+          id={'hard-client'}
           text={'Сложный клиент'}
           valuePercent={{
             frontendDev: 5,
@@ -81,6 +102,7 @@ const Additional = ({ data, setData, bm }) => {
           bm={bm}
         />
         <AdditionalItem
+          id={'urgent-project'}
           text={'Срочный проект'}
           valuePercent={{
             frontendDev: 20,
