@@ -16,6 +16,7 @@ const AdditionalItem = ({
       setChecked(false)
       handleChange(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLms])
   // if (isLms) {
   //   console.log(isLms)
