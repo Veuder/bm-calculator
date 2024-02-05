@@ -7,7 +7,7 @@ const TypeOfBm = ({ bm, setBm, setData, hours }) => {
     <section className="type-of-bm">
       <fieldset>
         <legend>Выберите тип БМ</legend>
-        <div className="type-of-bm__item">
+        <div className={`type-of-bm__item ${bm === 'bmHours' ? 'active' : ''}`}>
           <input
             type="radio"
             id="bmHours"
@@ -19,7 +19,11 @@ const TypeOfBm = ({ bm, setBm, setData, hours }) => {
           <label htmlFor="bmHours">Бренд-медиа</label>
         </div>
 
-        <div className="type-of-bm__item">
+        <div
+          className={`type-of-bm__item ${
+            bm === 'bmModuleHours' ? 'active' : ''
+          }`}
+        >
           <input
             type="radio"
             id="bmModuleHours"
@@ -31,7 +35,11 @@ const TypeOfBm = ({ bm, setBm, setData, hours }) => {
           <label htmlFor="bmModuleHours">Бренд-медиа по модулю</label>
         </div>
 
-        <div className="type-of-bm__item">
+        <div
+          className={`type-of-bm__item ${
+            bm === 'bmWithoutPromotionHours' ? 'active' : ''
+          }`}
+        >
           <input
             type="radio"
             id="bmWithoutPromotionHours"
@@ -45,7 +53,11 @@ const TypeOfBm = ({ bm, setBm, setData, hours }) => {
           </label>
         </div>
 
-        <div className="type-of-bm__item">
+        <div
+          className={`type-of-bm__item ${
+            bm === 'promotionHours' ? 'active' : ''
+          }`}
+        >
           <input
             type="radio"
             id="promotionHours"

@@ -30,9 +30,49 @@ h1 {
     cursor: pointer;
     margin-bottom: 10px;
     font-size: 20px;
+    position: relative;
+
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   width: 2px;
+    //   height: 100%;
+    //   background-color: #222222;
+    //   position: absolute;
+    //   right: -15px;
+    //   top: 0;
+    // }
+    &.active label,
+    & label:hover {
+      background-color: #222222;
+      color: #fff;
+    }
+    // &:hover {
+    //   background-color: #222222;
+    //   color: #fff;
+    // }
+    input {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      margin: 0;
+      padding: 0;
+    }
     label {
       cursor: pointer;
+      padding: 10px 10px;
+      border: 1px solid #222222;
+      transition: 0.5s all;
+      border-radius: 5px;
     }
+  }
+
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 20px;
   }
 }
 
