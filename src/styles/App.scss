@@ -1,6 +1,9 @@
 @import './clear.scss';
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
-
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
 
 .container {
   max-width: 100%;
@@ -14,12 +17,6 @@
     margin-bottom: 40px;
   }
 }
-
-body {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-}
-
 
 h1 {
   width: 100%;
